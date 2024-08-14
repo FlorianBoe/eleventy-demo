@@ -1,16 +1,16 @@
 export default async function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({public: '/'});
+  eleventyConfig.addPassthroughCopy({
+    'src/assets': '/assets',
+    'src/images': '/images',
+  })
 
   return {
-    markdownTemplateEngine: 'njk',
-    dataTemplateEngine: 'njk',
-    htmlTemplateEngine: 'njk',
-
     dir: {
       input: 'src',
-      output: 'dist',
-      includes: '_includes',
-      layouts: '_layouts'
+      output: "_site",
+      includes: "_includes",
+      layouts: '_layouts',
+      data: '_data'
     }
-  };
+  }
 }

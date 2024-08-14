@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} - {{ meta.title }}</title>
 
-    <link href="/assets/style.css" rel="stylesheet">
-  </head>
-  <body>
-    {% include "header.njk" %}
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="site">
+  {% include "page-header.njk" %}
 
-    <main class="wrapper">
-      {% block content %}
-        {{ content | safe }}
-      {% endblock %}
-    </main>
+  <main class="wrapper">
+    {% block mainContent %}
+      {{ content | safe }}
+    {% endblock %}
+  </main>
 
-    {% include "footer.njk" %}
-  </body>
+  {% include "page-footer.njk" %}
+
+  <script src="/assets/js/main.js"></script>
+</body>
 </html>
